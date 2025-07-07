@@ -1,0 +1,6 @@
+# .gitignore 내용
+venv/
+__pycache__/
+*.pyc
+*.sqlite3
+.dockerignore
