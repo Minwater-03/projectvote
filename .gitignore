@@ -1,7 +1,23 @@
-# .gitignore 내용
+# 가상환경
 venv/
+.venv/
+
+# 파이썬 캐시 및 빌드
 __pycache__/
-*.pyc
-*.sqlite3
-.dockerignore
+*.py[cod]
+*.pyo
+*.pyd
+
+# 환경 설정
 .env
+.vscode/
+.DS_Store
+Thumbs.db
+
+# SQLite
+*.sqlite3
+
+# Docker
+.dockerignore
+*.log
+*.pid
