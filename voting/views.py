@@ -4,9 +4,10 @@ from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 from .models import Project, Vote
 from .serializers import ProjectSerializer, VoteSerializer
+from django.db.models import Avg
 
 class ProjectListAPIView(generics.ListAPIView):
-    queryset = Project.objects.all()
+    queryset = Project.objects.annotate(avg_score=Avg('vote__score')).order_by('-avg_score')
     serializer_class = ProjectSerializer
 
 class ProjectDetailAPIView(generics.RetrieveAPIView):

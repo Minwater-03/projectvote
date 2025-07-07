@@ -2,6 +2,13 @@
 
 FROM python:3.10-slim
 
+# .pyc 파일 생성 방지 (소스 디렉토리에 불필요한 캐시 파일 생성을 막음)
+ENV PYTHONDONTWRITEBYTECODE 1
+
+# 표준 출력 버퍼링 비활성화 (print() 결과가 즉시 출력되도록 함)
+ENV PYTHONUNBUFFERED 1
+
+
 # 작업 디렉토리 설정
 WORKDIR /app
 
