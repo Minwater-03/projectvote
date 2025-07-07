@@ -9,8 +9,11 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 나머지 모든 파일 복사
+# 전체 프로젝트 복사
 COPY . .
+
+#포트 오픈
+EXPOSE 8000
 
 # 포트 열고 Django 실행
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
