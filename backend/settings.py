@@ -20,7 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'voting',  # 우리가 만든 앱
+    'rest_framework',
+    'voting',  # voting 앱
 ]
 
 MIDDLEWARE = [
