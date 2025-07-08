@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ project.title }}</title>
+</head>
+<body>
+    <h1>{{ project.title }}</h1>
+    <p><strong>설명:</strong> {{ project.description }}</p>
+    <p><strong>GitHub:</strong> <a href="{{ project.github_url }}">{{ project.github_url }}</a></p>
+    <p><strong>평균 점수:</strong> {{ avg_score }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="score">1~5점 투표:</label>
+        <input type="number" name="score" id="score" min="1" max="5" required>
+        <button type="submit">투표하기</button>
+    </form>
+
+    <br>
+    <a href="{% url 'project_list' %}">← 목록으로 돌아가기</a>
+</body>
+</html>
